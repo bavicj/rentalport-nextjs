@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "@material-ui/core": "latest",
+    "@material-ui/icons": "^4.11.2",
+    "@material-ui/styles": "^4.11.3",
     "clsx": "latest",
     "next": "10.0.8",
     "react": "17.0.1",
