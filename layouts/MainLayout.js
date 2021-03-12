@@ -40,6 +40,7 @@ import {
 import clsx from 'clsx';
 import Image from 'next/image';
 import CollapsableListItem from 'components/CollapsableListItem';
+import Link from 'components/Link'
 
 const drawerWidth = 300;
 
@@ -169,8 +170,10 @@ export default function Layout({ children }) {
               <Menu/>
             </IconButton>
             <div className={classes.title}>
+              <Link href={'/'}>
               <Image src='/images/rental-port-logo.png' alt='RentalPort logo'
                      width="187" height='30'/>
+              </Link>
             </div>
             <Button color="inherit" startIcon={<Person/>}>Prihlásenie</Button>
           </Toolbar>

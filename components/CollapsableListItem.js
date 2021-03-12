@@ -38,7 +38,7 @@ export default function CollapsableListItem({
       <Collapse in={open} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
           {items.map(item =>
-            <ListItem button className={classes.nested}>
+            <ListItem key={item.name} button className={classes.nested}>
               {item.icon &&
               <ListItemIcon>
                 {item.icon}
