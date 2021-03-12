@@ -18,6 +18,7 @@
 # misc
 .DS_Store
 *.pem
+justfile
 
 # debug
 npm-debug.log*
