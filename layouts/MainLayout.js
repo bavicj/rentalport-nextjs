@@ -14,7 +14,7 @@ import {
   YouTube,
   LinkedIn,
   Instagram,
-  Facebook
+  Facebook,
 } from '@material-ui/icons';
 import {
   Typography,
@@ -39,7 +39,7 @@ import {
 } from '@material-ui/core';
 import clsx from 'clsx';
 import Image from 'next/image';
-import CollapsableListItem from 'components/CollapsableListItem'
+import CollapsableListItem from 'components/CollapsableListItem';
 
 const drawerWidth = 300;
 
@@ -138,8 +138,8 @@ const useStyles = makeStyles((theme) => ({
     padding: 24,
   },
   textAlignCenter: {
-    textAlign: 'center'
-  }
+    textAlign: 'center',
+  },
 }));
 
 export default function Layout({ children }) {
@@ -211,7 +211,8 @@ export default function Layout({ children }) {
               </ListItemIcon>
               <ListItemText primary="Blog"/>
             </ListItem>
-            <CollapsableListItem icon={<Business/>} title='Spoločnost' items={[{name: 'O nás'}]}/>
+            <CollapsableListItem icon={<Business/>} title='Spoločnost'
+                                 items={[{ name: 'O nás' }]}/>
           </List>
         </Drawer>
         <main className={clsx(classes.content, {
@@ -222,27 +223,56 @@ export default function Layout({ children }) {
           <footer className={classes.footer}>
             <Grid container>
               <Grid item xs={12} className={classes.textAlignCenter}>
-                <Image src='/images/rental-port-logo-blue.png' alt='RentalPort logo'
+                <Image src='/images/rental-port-logo-blue.png'
+                       alt='RentalPort logo'
                        width="187" height='30'/>
               </Grid>
               <Grid item xs={12} lg={3}>
                 <List>
-                  <CollapsableListItem icon={<Business/>} title='Spoločnost' items={[{name: 'O nás'}, {name: 'Náš team'}, {name: 'Kontaktné informácie'}]} defaultOpen/>
+                  <CollapsableListItem icon={<Business/>} title='Spoločnost'
+                                       items={[
+                                         { name: 'O nás' },
+                                         { name: 'Náš team' },
+                                         { name: 'Kontaktné informácie' }]}
+                                       defaultOpen/>
                 </List>
               </Grid>
               <Grid item xs={12} lg={3}>
                 <List>
-                  <CollapsableListItem icon={<Explore/>} title='Užitočné informácie' items={[{name: 'FAQ'}, {name: 'Akciové ponuky'}, {name: 'Affiliate program'}]} defaultOpen/>
+                  <CollapsableListItem icon={<Explore/>}
+                                       title='Užitočné informácie' items={[
+                    { name: 'FAQ' },
+                    { name: 'Akciové ponuky' },
+                    { name: 'Affiliate program' }]} defaultOpen/>
                 </List>
               </Grid>
               <Grid item xs={12} lg={3}>
                 <List>
-                  <CollapsableListItem icon={<Gavel/>} title='Právne informácie' items={[{name: 'Podmienky pre užívateľov'}, {name: 'Podmienky GDPR'}, {name: 'Nastavenie cookies'}]} defaultOpen/>
+                  <CollapsableListItem icon={<Gavel/>} title='Právne informácie'
+                                       items={[
+                                         { name: 'Podmienky pre užívateľov' },
+                                         { name: 'Podmienky GDPR' },
+                                         { name: 'Nastavenie cookies' }]}
+                                       defaultOpen/>
                 </List>
               </Grid>
               <Grid item xs={12} lg={3}>
                 <List>
-                  <CollapsableListItem icon={<Share/>} title='Sledujte nás' items={[{name: 'Facebook', icon: <Facebook/>}, {name: 'Instagram', icon: <Instagram/>}, {name: 'Youtube', icon: <YouTube/>}, {name: 'LinkedIn', icon: <LinkedIn/>}]} defaultOpen/>
+                  <CollapsableListItem icon={<Share/>} title='Sledujte nás'
+                                       items={[
+                                         {
+                                           name: 'Facebook',
+                                           icon: <Facebook/>,
+                                         },
+                                         {
+                                           name: 'Instagram',
+                                           icon: <Instagram/>,
+                                         },
+                                         { name: 'Youtube', icon: <YouTube/> },
+                                         {
+                                           name: 'LinkedIn',
+                                           icon: <LinkedIn/>,
+                                         }]} defaultOpen/>
                 </List>
               </Grid>
             </Grid>
@@ -258,19 +288,21 @@ export default function Layout({ children }) {
         </main>
 
       </div>
-      <AppBar position="fixed" color="primary" style={{top: "auto", bottom: 0}}>
+      <AppBar position="fixed" color="primary"
+              style={{ top: 'auto', bottom: 0 }}>
 
-      <BottomNavigation value={'home'}
-                        showLabels
-                        onChange={(newnav) => console.log('changed nav',
-                          newnav)}>
-        <BottomNavigationAction label="Domov" value="home" icon={<Home/>}/>
-        <BottomNavigationAction label="Hľadať" value="search" icon={<Search/>}/>
-        <BottomNavigationAction label="História" value="history"
-                                icon={<History/>}/>
-        <BottomNavigationAction label="Prihlásenie" value="login"
-                                icon={<Person/>}/>
-      </BottomNavigation>
+        <BottomNavigation value={'home'}
+                          showLabels
+                          onChange={(newnav) => console.log('changed nav',
+                            newnav)}>
+          <BottomNavigationAction label="Domov" value="home" icon={<Home/>}/>
+          <BottomNavigationAction label="Hľadať" value="search"
+                                  icon={<Search/>}/>
+          <BottomNavigationAction label="História" value="history"
+                                  icon={<History/>}/>
+          <BottomNavigationAction label="Prihlásenie" value="login"
+                                  icon={<Person/>}/>
+        </BottomNavigation>
       </AppBar>
     </>
   );
