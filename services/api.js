@@ -1,4 +1,5 @@
 import Axios from 'axios'
+import qs from 'qs'
 
 export const BASE_URL = 'https://rentalport.com/'
 
@@ -15,4 +16,23 @@ export const getPlaces = () => api.post('index.php?apt=ajax&ajax=get_places&comp
 
 export const fetcher = (url) => api.get(url);
 
+export const postFetcher = (url) => api.post(url);
+
 export const ffetcher = (url) => fetch(url).then((r) => r.json());
+
+export const initSearch = (data) =>
+  api.get('/index.php+?lang=sk', {
+    params: {
+      ajax: 'search',
+      apt: 'ajax',
+      ...data,
+      LastSearchID: 'PWx54oDZ3xotzGjtLG3G',
+      UserID: 'GhyUU0yLrhfZtmWkoRbGmOjoGJE3',
+      discount_code: '',
+    },
+    paramsSerializer: function (params) {
+      return qs.stringify(params, { arrayFormat: 'repeat' })
+    },
+  })
+
+export default api

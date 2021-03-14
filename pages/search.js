@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
-import useSWR, { SWRConfig } from 'swr'
+import useSWR from 'swr'
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import CardList from 'components/CardList';
 import { fireDb } from 'services/fireinit'
+import SearchBar from 'components/SearchBar'
 
 export default function Search() {
   useEffect(() => { window.fireDB = fireDb }, [])
@@ -19,6 +20,7 @@ export default function Search() {
         <Typography variant="h4" component="h1" gutterBottom>
           Search Works
         </Typography>
+        <SearchBar />
         <CardList cars={data} />
       </Box>
     </Container>

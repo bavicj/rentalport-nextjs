@@ -1,5 +1,5 @@
 import { fireDb } from 'services/fireinit'
-const path = "/results/GhyUU0yLrhfZtmWkoRbGmOjoGJE3/PWx54oDZ3xotzGjtLG3G"
+const path = "/results/GhyUU0yLrhfZtmWkoRbGmOjoGJE3/d405e4a6-0607-46c6-8510-84a36bddac2a"
 
 export default (req, res) => {
   fireDb.collection(path).limit(10).onSnapshot(({ docs }) => {
